@@ -84,8 +84,8 @@ var PubSubConnectionFactory = pubSubManager.PubSubConnectionFactory;
 var config = pubSubManager.config;
 
 // create the connection manager
-config.connections.test_connection = {
-  'driver': 'custom_driver'
+config.connections.custom_driver = {
+  // add custom config here
 };
 let factory = new PubSubConnectionFactory();
 let manager = new PubSubManager(factory, config);
@@ -96,5 +96,5 @@ manager.extend('custom_driver', (config) => {
 });
 
 // get an instance of your connection using a custom driver
-let connection = manager.connection('test_connection');
+let connection = manager.connection('custom_driver');
 ```
