@@ -34,12 +34,12 @@ GOOGLE_APPLICATION_CREDENTIALS=path/to/your/gcloud-key.json
 
 ## Usage
 ```node
-"use strict";
+'use strict';
 
-var pubSubManager = require('@superbalist/js-pubsub-manager');
-var PubSubManager = pubSubManager.PubSubManager;
-var PubSubConnectionFactory = pubSubManager.PubSubConnectionFactory;
-var config = pubSubManager.config;
+let pubSubManager = require('@superbalist/js-pubsub-manager');
+let PubSubManager = pubSubManager.PubSubManager;
+let PubSubConnectionFactory = pubSubManager.PubSubConnectionFactory;
+let config = pubSubManager.config;
 
 // add a custom connection to the config
 config.connections.my_connection = {
@@ -76,12 +76,12 @@ Please see the [js-pubsub](https://github.com/Superbalist/js-pubsub) documentati
 To include your custom driver, you can call the `extend()` function.
 
 ```node
-"use strict";
+'use strict';
 
-var pubSubManager = require('@superbalist/js-pubsub-manager');
-var PubSubManager = pubSubManager.PubSubManager;
-var PubSubConnectionFactory = pubSubManager.PubSubConnectionFactory;
-var config = pubSubManager.config;
+let pubSubManager = require('@superbalist/js-pubsub-manager');
+let PubSubManager = pubSubManager.PubSubManager;
+let PubSubConnectionFactory = pubSubManager.PubSubConnectionFactory;
+let config = pubSubManager.config;
 
 // create the connection manager
 config.connections.custom_driver = {
@@ -91,7 +91,7 @@ let factory = new PubSubConnectionFactory();
 let manager = new PubSubManager(factory, config);
 
 manager.extend('custom_driver', (config) => {
-  // your callable must return an object which implements the publish() and subscribe() methods
+  // your callable must return an object which implements the https://github.com/Superbalist/js-pubsub/blob/master/src/PubSubAdapterInterface.js interface.
   return new MyCustomPubSubDriver(config);
 });
 

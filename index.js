@@ -1,8 +1,10 @@
-"use strict";
+'use strict';
 
-var PubSubManager = require('./src/PubSubManager');
-var PubSubConnectionFactory = require('./src/PubSubConnectionFactory');
-var config = require('./src/config');
+/** @module pubsubManager */
+
+let PubSubManager = require('./src/PubSubManager');
+let PubSubConnectionFactory = require('./src/PubSubConnectionFactory');
+let config = require('./src/config');
 
 module.exports.PubSubManager = PubSubManager;
 module.exports.PubSubConnectionFactory = PubSubConnectionFactory;
