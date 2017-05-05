@@ -1,6 +1,6 @@
 'use strict';
 
-/** @module pubsubManager */
+/** @module @superbalist/js-pubsub-manager */
 
 let PubSubManager = require('./src/PubSubManager');
 let PubSubConnectionFactory = require('./src/PubSubConnectionFactory');

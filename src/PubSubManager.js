@@ -36,7 +36,7 @@ class PubSubManager {
     this.config = config;
 
     /**
-     * @type {Object.<string, module:pubsub.PubSubAdapterInterface>}
+     * @type {Object.<string, module:@superbalist/js-pubsub.PubSubAdapterInterface>}
      */
     this.connections = {};
 
@@ -56,7 +56,7 @@ class PubSubManager {
    * If the connection does not exist, it will create a new connection.
    *
    * @param {?string} [name]
-   * @return {module:pubsub.PubSubAdapterInterface}
+   * @return {module:@superbalist/js-pubsub.PubSubAdapterInterface}
    * @example
    * let adapter = manager.connection();
    * adapter = manager.connection('redis');
@@ -78,7 +78,7 @@ class PubSubManager {
    * Create a connection to a PubSub adapter.
    *
    * @param {string} name
-   * @return {module:pubsub.PubSubAdapterInterface}
+   * @return {module:@superbalist/js-pubsub.PubSubAdapterInterface}
    * @private
    * @throws Error if the connection config is missing a 'driver' attribute
    */

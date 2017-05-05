@@ -23,7 +23,7 @@ class PubSubConnectionFactory {
    *
    * @param {string} driver
    * @param {Object} [config={}]
-   * @return {module:pubsub.PubSubAdapterInterface}
+   * @return {module:@superbalist/js-pubsub.PubSubAdapterInterface}
    * @throws Error if the driver is not supported
    * @example
    * let config = {
