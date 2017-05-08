@@ -1,6 +1,6 @@
 {
   "name": "@superbalist/js-pubsub-manager",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A manager & factory for the js-pubsub package.",
   "main": "index.js",
   "scripts": {
