@@ -9,20 +9,16 @@ let DevNullPubSubAdapter = PubSub.DevNullPubSubAdapter;
 let LocalPubSubAdapter = PubSub.LocalPubSubAdapter;
 
 // stub out required modules
-let [redis, googleCloudPubSub] = (() => {
-  let redis = {
-    createClient: sinon.stub(),
-  };
+let redis = {
+  createClient: sinon.stub(),
+};
 
-  let pubsub = sinon.stub();
+let googleCloudPubSub = sinon.stub();
 
-  proxyquire('../lib/PubSubConnectionFactory', {
-    'redis': redis,
-    '@google-cloud/pubsub': pubsub,
-  });
-
-  return [redis, pubsub];
-})();
+proxyquire('../lib/PubSubConnectionFactory', {
+  'redis': redis,
+  '@google-cloud/pubsub': googleCloudPubSub,
+});
 
 let PubSubConnectionFactory = require('../lib/PubSubConnectionFactory');
 let RedisPubSubAdapter = require('@superbalist/js-pubsub-redis');
