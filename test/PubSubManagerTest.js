@@ -5,8 +5,8 @@ let expect = chai.expect;
 let sinon = require('sinon');
 let PubSub = require('@superbalist/js-pubsub');
 let PubSubAdapterInterface = PubSub.PubSubAdapterInterface;
-let PubSubConnectionFactory = require('../src/PubSubConnectionFactory');
-let PubSubManager = require('../src/PubSubManager');
+let PubSubConnectionFactory = require('../lib/PubSubConnectionFactory');
+let PubSubManager = require('../lib/PubSubManager');
 
 describe('PubSubManagerTest', () => {
   describe('construct instance', () => {
