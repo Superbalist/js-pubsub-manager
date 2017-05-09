@@ -16,7 +16,7 @@ let [redis, googleCloudPubSub] = (() => {
 
   let pubsub = sinon.stub();
 
-  proxyquire('../src/PubSubConnectionFactory', {
+  proxyquire('../lib/PubSubConnectionFactory', {
     'redis': redis,
     '@google-cloud/pubsub': pubsub,
   });
@@ -24,7 +24,7 @@ let [redis, googleCloudPubSub] = (() => {
   return [redis, pubsub];
 })();
 
-let PubSubConnectionFactory = require('../src/PubSubConnectionFactory');
+let PubSubConnectionFactory = require('../lib/PubSubConnectionFactory');
 let RedisPubSubAdapter = require('@superbalist/js-pubsub-redis');
 let GoogleCloudPubSubAdapter = require('@superbalist/js-pubsub-google-cloud');
 

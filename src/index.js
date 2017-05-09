@@ -2,9 +2,9 @@
 
 /** @module @superbalist/js-pubsub-manager */
 
-let PubSubManager = require('./src/PubSubManager');
-let PubSubConnectionFactory = require('./src/PubSubConnectionFactory');
-let config = require('./src/config');
+let PubSubManager = require('./PubSubManager');
+let PubSubConnectionFactory = require('./PubSubConnectionFactory');
+let config = require('./config');
 
 module.exports.PubSubManager = PubSubManager;
 module.exports.PubSubConnectionFactory = PubSubConnectionFactory;
