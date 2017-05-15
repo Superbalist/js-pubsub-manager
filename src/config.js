@@ -53,7 +53,7 @@ let config = {
   | Supported: "/dev/null", "local", "redis", "gcloud"
   |
   */
-  'default': process.env.PUBSUB_CONNECTION || 'REDIS',
+  'default': process.env.PUBSUB_CONNECTION || 'redis',
 
   /*
   |--------------------------------------------------------------------------
