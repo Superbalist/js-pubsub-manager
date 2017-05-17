@@ -60,6 +60,13 @@ let connection = manager.connection();
 // publish a message
 connection.publish('my_channel', {"first_name":"Matthew"});
 
+// publish multiple messages to a channel
+let messages = [
+  'message 1',
+  'message 2',
+];
+connection.publishBatch('my_channel', messages);
+
 // subscribe to a channel
 connection.subscribe('my_channel', (message) => {
   console.log(message);

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0 - 2017-05-17
+
+* Bump up @superbalist/js-pubsub to ^2.0.0
+* Bump up @superbalist/js-pubsub-redis to ^2.0.0
+* Bump up @superbalist/js-pubsub-google-cloud to ^2.0.0
+
 ## 1.0.2 - 2017-05-15
 
 * Fix default connection - should be lowercase "redis"

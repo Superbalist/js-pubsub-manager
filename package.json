@@ -27,9 +27,9 @@
   "homepage": "https://github.com/Superbalist/js-pubsub-manager#readme",
   "dependencies": {
     "@google-cloud/pubsub": "^0.11.0",
-    "@superbalist/js-pubsub": "^1.0.0",
-    "@superbalist/js-pubsub-google-cloud": "^1.0.0",
-    "@superbalist/js-pubsub-redis": "^1.0.0",
+    "@superbalist/js-pubsub": "^2.0.0",
+    "@superbalist/js-pubsub-google-cloud": "^2.0.0",
+    "@superbalist/js-pubsub-redis": "^2.0.0",
     "redis": "^2.7.1"
   },
   "devDependencies": {
