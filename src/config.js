@@ -8,6 +8,7 @@
  * @property {LocalAdapterConfig} connections.local
  * @property {RedisAdapterConfig} connections.redis
  * @property {GoogleCloudAdapterConfig} connections.gcloud
+ * @property {HTTPAdapterConfig} connections.http
  */
 
 /**
@@ -39,6 +40,13 @@
  */
 
 /**
+ * @typedef {Object} HTTPAdapterConfig
+ * @property {string} [driver=http]
+ * @property {string} [uri=process.env.HTTP_PUBSUB_URI]
+ * @property {Object} [subscribe_connection=process.env.HTTP_PUBSUB_SUBSCRIBE_CONNECTION || 'redis']
+ */
+
+/**
  *
  * @type {ManagerConfig}
  */
@@ -50,7 +58,7 @@ let config = {
   |
   | The default pub-sub connection to use.
   |
-  | Supported: "/dev/null", "local", "redis", "gcloud"
+  | Supported: "/dev/null", "local", "redis", "gcloud", "http"
   |
   */
   'default': process.env.PUBSUB_CONNECTION || 'redis',
@@ -90,6 +98,12 @@ let config = {
       'client_identifier': null,
       'auto_create_topics': true,
       'auto_create_subscriptions': true,
+    },
+
+    'http': {
+      'driver': 'http',
+      'uri': process.env.HTTP_PUBSUB_URI,
+      'subscribe_connection': process.env.HTTP_PUBSUB_SUBSCRIBE_CONNECTION || 'redis',
     },
   },
 };

@@ -7,6 +7,7 @@ let redis = require('redis');
 let RedisPubSubAdapter = require('@superbalist/js-pubsub-redis');
 let googleCloudPubSub = require('@google-cloud/pubsub');
 let GoogleCloudPubSubAdapter = require('@superbalist/js-pubsub-google-cloud');
+let HTTPPubSubAdapter = require('@superbalist/js-pubsub-http');
 
 /**
  * PubSubConnectionFactory Class
@@ -44,6 +45,8 @@ class PubSubConnectionFactory {
         return this._makeRedisAdapter(config);
       case 'gcloud':
         return this._makeGoogleCloudAdapter(config);
+      case 'http':
+        return this._makeHTTPAdapter(config);
     }
     throw new Error(`The driver [${driver}] is not supported.`);
   }
@@ -80,6 +83,21 @@ class PubSubConnectionFactory {
       config.auto_create_topics,
       config.auto_create_subscriptions
     );
+  }
+
+  /**
+   * Create a HTTPPubSubAdapter with the given config.
+   *
+   * @param {HTTPAdapterConfig} config
+   * @return {HTTPPubSubAdapter}
+   * @private
+   */
+  _makeHTTPAdapter(config) {
+    let adapter = this.make(
+      config.subscribe_connection_config.driver,
+      config.subscribe_connection_config
+    );
+    return new HTTPPubSubAdapter(config.uri, adapter);
   }
 }
 

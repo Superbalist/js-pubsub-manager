@@ -7,6 +7,7 @@ let proxyquire = require('proxyquire');
 let PubSub = require('@superbalist/js-pubsub');
 let DevNullPubSubAdapter = PubSub.DevNullPubSubAdapter;
 let LocalPubSubAdapter = PubSub.LocalPubSubAdapter;
+let HTTPPubSubAdapter = require('@superbalist/js-pubsub-http');
 
 // stub out required modules
 let redis = {
@@ -71,6 +72,21 @@ describe('PubSubConnectionFactory', () => {
           'keyFilename': 'my_key.json',
         }
       );
+    });
+
+    it('with "http" should return an instance of a HTTPPubSubAdapter', () => {
+      let factory = new PubSubConnectionFactory();
+      let config = {
+        uri: 'http://127.0.0.1',
+        subscribe_connection_config: {
+          driver: '/dev/null',
+        },
+      };
+      let connection = factory.make('http', config);
+
+      expect(connection).to.be.an.instanceof(HTTPPubSubAdapter);
+      expect(connection.uri).to.equal('http://127.0.0.1');
+      expect(connection.adapter).to.be.an.instanceof(DevNullPubSubAdapter);
     });
 
     it('should throw an exception if an invalid driver is given', () => {

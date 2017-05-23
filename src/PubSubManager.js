@@ -112,7 +112,14 @@ class PubSubManager {
       throw new Error(`The pub-sub connection [${name}] is not configured.`);
     }
 
-    return connections[name];
+    let config = connections[name];
+
+    // resolve connection name to sub-config
+    if (config.hasOwnProperty('subscribe_connection')) {
+      config.subscribe_connection_config = this._getConnectionConfig(config.subscribe_connection);
+    }
+
+    return config;
   }
 
   /**

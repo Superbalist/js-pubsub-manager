@@ -159,6 +159,42 @@ describe('PubSubManagerTest', () => {
       );
     });
 
+    it('when driver is http should resolve the subscribe_connection to a sub-config', () => {
+      let factory = sinon.createStubInstance(PubSubConnectionFactory);
+
+      let config = {
+        'default': 'http',
+        'connections': {
+          '/dev/null': {
+            'driver': '/dev/null',
+          },
+          'http': {
+            'driver': 'http',
+            'uri': 'http://127.0.0.1',
+            'subscribe_connection': '/dev/null',
+          },
+        },
+      };
+
+      let manager = new PubSubManager(factory, config);
+
+      manager.connection('http');
+
+      sinon.assert.calledOnce(factory.make);
+      sinon.assert.calledWith(
+        factory.make,
+        'http',
+        {
+          'driver': 'http',
+          'uri': 'http://127.0.0.1',
+          'subscribe_connection': '/dev/null',
+          'subscribe_connection_config': {
+            'driver': '/dev/null',
+          },
+        }
+      );
+    });
+
     it('should re-use an existing connection if the connection has already been established', () => {
       let adapter = sinon.createStubInstance(PubSubAdapterInterface);
 
