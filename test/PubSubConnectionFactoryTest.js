@@ -78,7 +78,7 @@ describe('PubSubConnectionFactory', () => {
       let factory = new PubSubConnectionFactory();
       let config = {
         uri: 'http://127.0.0.1',
-        subscribe_connection: {
+        subscribe_connection_config: {
           driver: '/dev/null',
         },
       };

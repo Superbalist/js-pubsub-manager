@@ -94,8 +94,8 @@ class PubSubConnectionFactory {
    */
   _makeHTTPAdapter(config) {
     let adapter = this.make(
-      config.subscribe_connection.driver,
-      config.subscribe_connection
+      config.subscribe_connection_config.driver,
+      config.subscribe_connection_config
     );
     return new HTTPPubSubAdapter(config.uri, adapter);
   }

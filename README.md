@@ -34,6 +34,7 @@ GOOGLE_CLOUD_PROJECT_ID=your-project-id-here
 GOOGLE_APPLICATION_CREDENTIALS=path/to/your/gcloud-key.json
 
 HTTP_PUBSUB_URI=null
+HTTP_PUBSUB_SUBSCRIBE_CONNECTION=redis
 ```
 
 ## Usage

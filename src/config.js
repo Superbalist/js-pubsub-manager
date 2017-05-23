@@ -43,7 +43,7 @@
  * @typedef {Object} HTTPAdapterConfig
  * @property {string} [driver=http]
  * @property {string} [uri=process.env.HTTP_PUBSUB_URI]
- * @property {Object} [subscribe_connection={}]
+ * @property {Object} [subscribe_connection=process.env.HTTP_PUBSUB_SUBSCRIBE_CONNECTION || 'redis']
  */
 
 /**
@@ -103,9 +103,7 @@ let config = {
     'http': {
       'driver': 'http',
       'uri': process.env.HTTP_PUBSUB_URI,
-      'subscribe_connection': {
-
-      },
+      'subscribe_connection': process.env.HTTP_PUBSUB_SUBSCRIBE_CONNECTION || 'redis',
     },
   },
 };
