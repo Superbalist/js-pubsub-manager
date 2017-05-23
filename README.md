@@ -15,6 +15,7 @@ The following adapters are supported:
 * /dev/null
 * Redis
 * Google Cloud
+* HTTP
 
 ## Installation
 
@@ -31,6 +32,8 @@ REDIS_PORT=6379
 
 GOOGLE_CLOUD_PROJECT_ID=your-project-id-here
 GOOGLE_APPLICATION_CREDENTIALS=path/to/your/gcloud-key.json
+
+HTTP_PUBSUB_URI=null
 ```
 
 ## Usage
@@ -45,9 +48,9 @@ let config = pubSubManager.config;
 // add a custom connection to the config
 config.connections.my_connection = {
   'driver': 'redis',
-    'host': '192.168.0.1',
-    'port': 6379,
-    'db': 0
+  'host': '192.168.0.1',
+  'port': 6379,
+  'db': 0
 }
 
 // create the connection manager

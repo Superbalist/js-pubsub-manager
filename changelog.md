@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 - ?
+
+* Add support for HTTP adapter
+
 ## 2.0.0 - 2017-05-17
 
 * Bump up @superbalist/js-pubsub to ^2.0.0
