@@ -34,7 +34,7 @@
  * @property {string} [driver=gcloud]
  * @property {string} [project_id=process.env.GOOGLE_CLOUD_PROJECT_ID]
  * @property {string} [key_file=process.env.GOOGLE_APPLICATION_CREDENTIALS]
- * @property {?string} [client_identifier]
+ * @property {?string} [client_identifier=process.env.GOOGLE_CLOUD_CLIENT_IDENTIFIER]
  * @property {boolean} [auto_create_topics=true]
  * @property {boolean} [auto_create_subscriptions=true]
  */
@@ -95,7 +95,7 @@ let config = {
       'driver': 'gcloud',
       'project_id': process.env.GOOGLE_CLOUD_PROJECT_ID,
       'key_file': process.env.GOOGLE_APPLICATION_CREDENTIALS,
-      'client_identifier': null,
+      'client_identifier': process.env.GOOGLE_CLOUD_CLIENT_IDENTIFIER,
       'auto_create_topics': true,
       'auto_create_subscriptions': true,
     },
