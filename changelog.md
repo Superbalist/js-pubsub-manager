@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.2 - ?
+## 2.0.2 - 2017-05-26
 
 * Add GOOGLE_CLOUD_CLIENT_IDENTIFIER env var
 
