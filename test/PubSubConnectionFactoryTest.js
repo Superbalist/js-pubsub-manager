@@ -11,7 +11,7 @@ let HTTPPubSubAdapter = require('@superbalist/js-pubsub-http');
 
 // stub out required modules
 let redis = {
-  createClient: sinon.stub(),
+  createClient: sinon.stub().returns({}),
 };
 
 let googleCloudPubSub = sinon.stub();

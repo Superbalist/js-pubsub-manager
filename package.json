@@ -1,6 +1,6 @@
 {
   "name": "@superbalist/js-pubsub-manager",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "A manager & factory for the js-pubsub package.",
   "main": "lib/index.js",
   "scripts": {
@@ -27,10 +27,10 @@
   "homepage": "https://github.com/Superbalist/js-pubsub-manager#readme",
   "dependencies": {
     "@google-cloud/pubsub": "^0.11.0",
-    "@superbalist/js-pubsub": "^2.0.0",
-    "@superbalist/js-pubsub-google-cloud": "^2.0.0",
-    "@superbalist/js-pubsub-http": "^1.0.0",
-    "@superbalist/js-pubsub-redis": "^2.0.0",
+    "@superbalist/js-pubsub": "^3.0.0",
+    "@superbalist/js-pubsub-google-cloud": "^3.0.0",
+    "@superbalist/js-pubsub-http": "^2.0.0",
+    "@superbalist/js-pubsub-redis": "^3.0.0",
     "redis": "^2.7.1"
   },
   "devDependencies": {
