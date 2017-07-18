@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 - 2017-07-18
+
+* Bump up to new js-pubsub-* packages which return a promise from the publish and publishBatch methods
+
 ## 2.0.2 - 2017-05-26
 
 * Add GOOGLE_CLOUD_CLIENT_IDENTIFIER env var
