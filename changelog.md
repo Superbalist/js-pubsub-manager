@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.0.0 - 2017-07-18
+## 3.0.1 - 2018-11-21
 
 * Bump up to new version of js-pubsub-google-cloud
 
