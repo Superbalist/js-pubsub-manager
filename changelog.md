@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1 - 2018-11-21
+
+* Bump up to new version of js-pubsub-google-cloud
+
 ## 3.0.0 - 2017-07-18
 
 * Bump up to new js-pubsub-* packages which return a promise from the publish and publishBatch methods
