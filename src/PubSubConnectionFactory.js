@@ -5,7 +5,7 @@ let DevNullPubSubAdapter = pubsub.DevNullPubSubAdapter;
 let LocalPubSubAdapter = pubsub.LocalPubSubAdapter;
 let redis = require('redis');
 let RedisPubSubAdapter = require('@superbalist/js-pubsub-redis');
-let googleCloudPubSub = require('@google-cloud/pubsub');
+let {PubSub} = require('@google-cloud/pubsub');
 let GoogleCloudPubSubAdapter = require('@superbalist/js-pubsub-google-cloud');
 let HTTPPubSubAdapter = require('@superbalist/js-pubsub-http');
 
@@ -75,7 +75,7 @@ class PubSubConnectionFactory {
       'projectId': config.project_id,
       'keyFilename': config.key_file,
     };
-    let client = googleCloudPubSub(clientConfig);
+    let client = new PubSub(clientConfig);
 
     return new GoogleCloudPubSubAdapter(
       client,
